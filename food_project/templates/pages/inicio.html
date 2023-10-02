@@ -1,0 +1,59 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block title %}LocalFood{% endblock %}
+
+{% block content %}
+<article class="article">
+    <div class="options_container">
+        <i class="fa-solid fa-list" id="menu-icon"></i>
+        
+        <diV class="options">
+            <ul class="list">
+                <li class="list_li"><a href="{% url 'recetas' %}">Recetas</a></li>
+                <li class="list_li"><a href="https://instagram.com">Productos de temporada</a></li>
+                <li class="list_li"><a href="#">Educación</a></li>
+                <li class="list_li"><a href="#">Comunidad</a></li>
+                <li class="list_li"><a href="{% url 'suscripcion' %}">Suscripción</a></li>
+            </ul>
+        </diV>
+
+    </div>
+        <div class="info_container_container">
+            <div class="info">
+            </div>
+            <div class="info_container">
+                <h1>Title</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident ea labore, nisi magnam, vel tempore accusamus autem consectetur alias voluptatem aut rerum a esse rem omnis pariatur deserunt harum commodi.</p>
+            </div>
+            <div class="info">
+            </div>
+            <div class="info_container">
+                <h1>Title</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident ea labore, nisi magnam, vel tempore accusamus autem consectetur alias voluptatem aut rerum a esse rem omnis pariatur deserunt harum commodi.</p>
+            </div>
+            <div class="info">
+            </div>
+            <div class="info_container">
+                <h1>Title</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident ea labore, nisi magnam, vel tempore accusamus autem consectetur alias voluptatem aut rerum a esse rem omnis pariatur deserunt harum commodi.</p>
+            </div>
+        </div>
+    <div class="user">
+        <div class="container_img_container">
+            <div class="img_container"><i class="fa-solid fa-user"></i></div>
+        </div>
+        <div class="user_info">
+            <p>user name</p>
+            <p>Information type of suscription</p>
+        </div>
+        <i class="fa-solid fa-gear"></i>
+    </div>
+</article>
+{% endblock %}
+
+{% block style %} 
+    <link type="text/css" href="{% static 'css/inicio.css' %}" rel="stylesheet">
+    <script type = "text/javascript" src="{% static 'js/inicio.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,45 @@
+.container{
+    margin: 0;
+    padding: 0;
+    background: #C5E892;
+}
+
+.article_container{
+    display: flex;
+    justify-content: center;
+}
+
+.container_texto{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex: 1;
+    text-align: center;
+}
+
+.texto{
+    text-align: center;
+}
+
+.article{
+    width: 50vw;
+    margin: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.receta_container{
+    text-align: center;
+}
+
+.receta{
+    flex: 1;
+    height: 200px;
+    background: #FFFFFF;
+    margin-bottom: 10px;
+}   

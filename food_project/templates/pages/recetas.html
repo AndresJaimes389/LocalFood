@@ -1,0 +1,26 @@
+{% extends "layouts/base2.html" %}
+
+{% load static %}
+
+
+{% block styles %}
+    <link type="text/css" href="{% static 'css/recetass.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="container_texto">
+            <p class="texto">Ingrese los ingredientes de las recetas</p>
+        </div>
+            <div class="article_container">
+                <article class="article">
+                    <div class="receta_container">
+                        <div class="receta"></div>
+                        <h2>Titulo receta</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta natus vitae quod laborum a obcaecati odio, odit nihil perferendis quis, veniam eaque, laboriosam nobis qui! Consequuntur aperiam nihil rerum.</p>
+                    </div>
+                </article>
+            </div>
+    </div>
+{% endblock %}
