@@ -31,3 +31,7 @@ def principal(request):
 def info(request):
     titulo = "titulo dinámico"
     return render(request, "pages/info.html",{'titulo':'PQRS'})
+
+def comunidad(request):
+    titulo = "titulo dinámico"
+    return render(request, "pages/comunidad.html", {'titulo':'COMUNIDAD'})

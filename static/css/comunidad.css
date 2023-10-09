@@ -1,0 +1,11 @@
+.container{
+    margin: 0;
+    padding: 0;
+    background: #C5E892;
+}
+
+.search{
+    background-color: #fff;
+    width: 50vh;
+    height: 30vh;
+}
