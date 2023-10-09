@@ -2,16 +2,19 @@
 
 {% load static %}
 
+{% block title %}Recetas{% endblock %}
 
-{% block styles %}
-    <link type="text/css" href="{% static 'css/recetass.css' %}" rel="stylesheet" type="text/css">
-{% endblock %}
+
 
 {% block content %}
 
     <div class="container">
         <div class="container_texto">
             <p class="texto">Ingrese los ingredientes de las recetas</p>
+            <form class="search">
+                <input type="text" placeholder="Escriba aquí el ingrediente" class="input_receta">
+                <button type="submit" class="send"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
         </div>
             <div class="article_container">
                 <article class="article">
@@ -23,4 +26,8 @@
                 </article>
             </div>
     </div>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/receta.css' %}">
 {% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layouts/baseAuth.html" %}
+{% load static %}
+{% block title %}Info{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/info.css' %}">
+
+    <body>
+        <div class="container">
+            <textarea class="area" placeholder="escribe tu pregunta aquí"></textarea>
+            <button type="submit" class="button"><i class="fa-solid fa-up-right-from-square"></i>Enviar</button>
+        </div>
+    </body>
+
+
+{% endblock %}
