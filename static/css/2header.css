@@ -1,11 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Cormorant+Garamond:wght@300&family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
-*{
+
+
+* {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin: 0; 
+}
+
+body {
     font-family: 'Roboto Condensed', sans-serif;
-    
-  }
+}
+
 .header {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
@@ -34,7 +40,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Autour One', serif;
 }
 
 .btn_search:hover{
@@ -46,14 +54,24 @@
 .home_button{
     background: transparent;
     border: none;
-    
+    position: center;
+    width: 85px;
+    display: flex;
+
+}
+
+.a_img{
+    margin-left: 20px;
+    margin-top: 10px;
+    z-index: 10;
 }
 
 img{
-    width: 80px;
-    
-}
+    position: center;
+    width: 170px;
+    display: flex;
 
+}
 
 
 .div_settings{

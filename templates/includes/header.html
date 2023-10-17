@@ -1,16 +1,30 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
 
-
 <header class="header">
+
+    <div class="options_container">
+        <i class="fa-solid fa-list" id="menu-icon"></i>
+        <diV class="options">
+            <ul class="list">
+                <li class="list_li"><a href="{% url 'recetas' %}">Recetas</a></li>
+                <li class="list_li"><a href="https://instagram.com" target="_blank">Productos de temporada</a></li>
+                <li class="list_li"><a href="#">Educación</a></li>
+                <li class="list_li"><a href="{% url 'comunidad' %}">Comunidad</a></li>
+                <li class="list_li"><a href="{% url 'suscripcion' %}">Suscripción</a></li>
+            </ul>
+        </diV>
+
+    </div>
+
     <div class="button_home_container">
         <button type="button" class="home_button">
-            <a href="{% url 'inicio' %}" class=""><img src="{% static 'img/localfood.jpeg' %}"></a>
+            <a href="{% url 'inicio' %}" class=""><img src="{% static 'img/localfood.png' %}"></a>
         </button>
     </div>
     <div class="nav_conatiner">
         <nav class="nav_bar">
-            <input type="text" class="input_nav_bar" placeholder="buscar">
+            <input type="text" class="input_nav_bar" placeholder="Buscar">
             <button class="btn_search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </nav>
     </div>
