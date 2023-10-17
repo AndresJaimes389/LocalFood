@@ -23,16 +23,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Obtén una referencia al botón con el ID "enviar"
-    var enviarButton = document.getElementById("registro");
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Obtén una referencia al botón con el ID "enviar"
+//     var enviarButton = document.getElementById("registro");
 
-    // Agrega un evento de clic al botón
-    enviarButton.addEventListener("click", function (event) {
-        // Evita que el formulario se envíe (por defecto)
-        event.preventDefault();
+//     // Agrega un evento de clic al botón
+//     enviarButton.addEventListener("click", function (event) {
+//         // Evita que el formulario se envíe (por defecto)
+//         event.preventDefault();
 
-        // Redirige al usuario a la página 'inicio'
-        window.location.href = '/login';
-    });
-});
+//         // Redirige al usuario a la página 'inicio'
+//         window.location.href = '/login';
+//     });
+// });
