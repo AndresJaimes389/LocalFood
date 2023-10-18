@@ -25,7 +25,7 @@ urlpatterns = [
     path('suscripcion/', suscripcion, name = 'suscripcion'),
     path('login/', login, name = 'login'),
     
-    path('principal/', principal, name = 'principal'),
+    path('', principal, name = 'principal'),
     path('info/', info, name = 'info'),
     path('comunidad/', comunidad, name = 'comunidad'),
     path('', include('Aplicaciones.Conexion.urls'))

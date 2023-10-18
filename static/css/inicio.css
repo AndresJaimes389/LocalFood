@@ -6,48 +6,6 @@
     background: #C5E892;
 }
 
-.options_container{
-    font-size: 30px;
-    margin: 10px;
-    flex: 1;
-}
-
-.options_container i:hover{
-    cursor: pointer;
-}
-
-.option{
-    display: none;
-}
-
-.options.active{
-    display: flex;
-    
-    border-radius: 15px;
-
-}
-
-.list{
-    display: none;
-    position: absolute;
-    z-index: 10;
-}
-
-.list.active{
-    background: #fffdfd;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 15px;
-    list-style-type: none;
-    width: 25vw;
-    height: 30vh;
-    box-shadow: 0px 10px 10px 0px #414141;
-    border-radius: 10px;
-    position: absolute;
-    z-index: 10;
-}
-
 .user{
     display: flex;
     background: #5F5F5F;
@@ -101,6 +59,7 @@
 
 .info_container_container{
     flex: 2;
+    
 }
 
 .list_li a:link, .list_li:visited,.list_li a{

@@ -10,7 +10,9 @@
     <div class="container">
         <form class="form_container"  method="POST">
             {% csrf_token %}
-
+            <h3 class="title_error">
+                {{ error }}
+            </h3>
             <p class="name">Usuario</p>
             <input type="text" class="inputs" placeholder="Nombre de usuario" required="" name="User">
             <p class="name">Email</p>

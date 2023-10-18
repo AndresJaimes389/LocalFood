@@ -46,6 +46,10 @@ def signin(request):
                 user.save()
                 return HttpResponse("Usuario creado satisfactoriamente")
             except:
-                return HttpResponse("El usuario ya existe")
-        return HttpResponse("Las contraseñas no coinciden")    
+                return render(request, "signin.html",{'titulo': 'Crear cuenta',
+                                                'texto': "introduce los datos de tu cuenta o inicia sesión",
+                                                'error': 'El usuario ya existe'})
+        return render(request, "signin.html",{'titulo': 'Crear cuenta',
+                                                'texto': "introduce los datos de tu cuenta o inicia sesión",
+                                                'error': 'Las contraseñas no coinciden'})    
     
