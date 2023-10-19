@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import person_collection
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from django.contrib.auth import login, logout, authenticate
 
 # Create your views here.
 
@@ -41,10 +42,11 @@ def signin(request):
             # registro
             try:
                 user = User.objects.create_user(
-                username = request.POST['User'], email = request.POST['email'],
-                password = request.POST['password1'])
+                    username = request.POST['User'], email = request.POST['email'],
+                    password = request.POST['password1'])
                 user.save()
-                return HttpResponse("Usuario creado satisfactoriamente")
+                login(request, user)
+                return redirect('inicio')
             except:
                 return render(request, "signin.html",{'titulo': 'Crear cuenta',
                                                 'texto': "introduce los datos de tu cuenta o inicia sesión",
@@ -52,4 +54,34 @@ def signin(request):
         return render(request, "signin.html",{'titulo': 'Crear cuenta',
                                                 'texto': "introduce los datos de tu cuenta o inicia sesión",
                                                 'error': 'Las contraseñas no coinciden'})    
+    
+    
+def signout(request):
+    logout(request)
+    return redirect("principal")
+
+
+def login_view(request):
+    titulo = "titulo dinámico"
+    texto = "texto dinámico"
+    
+    if request.method == "GET":
+        return render(request, "login.html",{'titulo': 'Bienvenido de nuevo',
+                                                'texto': 'Inicie sesión a continuación o cree una cuenta'})
+    
+    else:
+        # print(request.POST)
+        user = authenticate(request, username=request.POST['Username'], password=request.POST['Password'])
+        
+        if user is None:
+            return render(request, "login.html",{'titulo': 'Bienvenido de nuevo',
+                                                    'texto': 'Inicie sesión a continuación o cree una cuenta',
+                                                    'error': 'Usuario o contraseña incorrectos'})
+        
+        else:
+            login(request, user)
+            return redirect('inicio')
+        
+        
+    
     

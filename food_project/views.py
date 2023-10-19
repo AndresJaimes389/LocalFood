@@ -13,11 +13,7 @@ def suscripcion(request):
     titulo = "titulo dinámico"
     return render(request, "pages/suscripcion.html",{'titulo':'Detalle de la suscripcion'})
 
-def login(request):
-    titulo = "titulo dinámico"
-    texto = "texto dinámico"
-    return render(request, "pages/login.html",{'titulo': 'Bienvenido de nuevo',
-                                               'texto': 'Inicie sesión a continuación o cree una cuenta'})
+
 
 
 

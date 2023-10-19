@@ -23,7 +23,9 @@
         <h2>Configuraciones</h2>
         <div class="links">
             <ul>
-                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/logout">Logout</a></li>
+                {% endif %}
                 <li><a href="{% url 'inicio' %}">Inicio</a></li>
                 <li><a href="{% url 'inicio' %}">Inicio</a></li>
             </ul>
