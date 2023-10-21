@@ -5,7 +5,7 @@
 <header class="header">
     <div class="button_home_container">
         <button type="button" class="home_button">
-            <a href="{% url 'inicio' %}" class=""><img src="{% static 'img/localfood.jpeg' %}"></a>
+            <a href="{% url 'inicio' %}" class="a_img"><img src="{% static 'img/logolocalfood.png' %}"></a>
         </button>
     </div>
 
@@ -23,7 +23,9 @@
         <h2>Configuraciones</h2>
         <div class="links">
             <ul>
-                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/logout">Logout</a></li>
+                {% endif %}
                 <li><a href="{% url 'inicio' %}">Inicio</a></li>
                 <li><a href="{% url 'inicio' %}">Inicio</a></li>
             </ul>

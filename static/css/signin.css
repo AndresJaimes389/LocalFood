@@ -4,6 +4,10 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+.title_error{
+    color: #ee4bbd;
+}
+
 .form_container{
     display: flex;
     margin: 10px;
