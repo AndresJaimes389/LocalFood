@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 
+
 def inicio(request):
     titulo = "titulo dinámico"
     return render(request, "pages/inicio.html",{'titulo': 'Inicio'})
@@ -12,10 +13,6 @@ def recetas(request):
 def suscripcion(request):
     titulo = "titulo dinámico"
     return render(request, "pages/suscripcion.html",{'titulo':'Detalle de la suscripcion'})
-
-
-
-
 
 def principal(request):
     return render(request, "pages/principal.html",{})
@@ -30,3 +27,6 @@ def comunidad(request):
 
 def padmin(request):
     return render(request, "pages/p_administrativo.html", {'titulo': 'Perfil Administrativo'})
+
+def libros(request):
+    return render(request, "libros/indexstock.html" , {'titulo': 'Libros'})
