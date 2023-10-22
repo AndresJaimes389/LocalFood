@@ -4,8 +4,24 @@
     background: #C5E892;
 }
 
-.search{
-    background-color: #fff;
-    width: 50vh;
-    height: 30vh;
+p {
+    content: "\00B7"; /* Usamos el carácter del punto (·) como contenido */
+    margin-right: 5px; /* Agregamos un espacio entre el punto y el texto */
+}
+
+.container-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    display: flex;
+    background-color: red;
+}
+
+.search .comment {
+    display: block;
+    height: 100px;
+    width: 500px;
 }
