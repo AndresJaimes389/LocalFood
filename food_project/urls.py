@@ -16,17 +16,33 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import inicio, recetas, suscripcion, principal, info, comunidad
+from .views import suscripcion, principal, comunidad, inicio
+from django.contrib.auth.decorators import login_required
+
+from django.urls import re_path
+from django.views.static import serve
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', inicio, name = 'inicio'),
-    path('recetas/', recetas, name = 'recetas'),
-    path('suscripcion/', suscripcion, name = 'suscripcion'),
-    
-    
+    path('inicio/', login_required(inicio, login_url = "/login/"), name = 'inicio'),
+    path('suscripcion/', login_required(suscripcion, login_url = "/login/"), name = 'suscripcion'),
     path('', principal, name = 'principal'),
-    path('info/', info, name = 'info'),
-    path('comunidad/', comunidad, name = 'comunidad'),
-    path('', include('Aplicaciones.Conexion.urls'))
+    path('comunidad/', login_required(comunidad, login_url = "/login/"), name = 'comunidad'),
+    path('', include('Aplicaciones.Conexion.urls')),
+    path('', include('Aplicaciones.recetas.urls')),
+    path('', include('Aplicaciones.contacto.urls')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('inicio/',inicio, name = 'inicio'),
+#     path('suscripcion/',suscripcion, name = 'suscripcion'),
+#     path('', principal, name = 'principal'),
+#     path('comunidad/',comunidad, name = 'comunidad'),
+#     path('', include('Aplicaciones.Conexion.urls')),
+#     path('', include('Aplicaciones.recetas.urls')),
+#     path('', include('Aplicaciones.contacto.urls')),
+# ]
