@@ -27,3 +27,6 @@ def info(request):
 def comunidad(request):
     titulo = "titulo dinámico"
     return render(request, "pages/comunidad.html", {'titulo':'COMUNIDAD'})
+
+def padmin(request):
+    return render(request, "pages/p_administrativo.html", {'titulo': 'Perfil Administrativo'})
