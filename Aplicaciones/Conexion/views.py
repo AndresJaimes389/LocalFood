@@ -71,12 +71,19 @@ def login_view(request):
     
     else:
         # print(request.POST)
-        user = authenticate(request, username=request.POST['Username'], password=request.POST['Password'])
-        
+        username_or_email = request.POST.get('Username')  # Intentamos obtener el valor del campo 'Username'
+        password = request.POST.get('Password')
+        # Intentamos autenticar al usuario con nombre de usuario o correo electrónico
+        user = None
+        if '@' in username_or_email:  # Si el campo 'Username' parece ser un correo electrónico
+            user = authenticate(request, email=username_or_email, password=password)
+        else:  # Si no es un correo electrónico, asumimos que es un nombre de usuario
+            user = authenticate(request, username=username_or_email, password=password)
+
         if user is None:
-            return render(request, "login.html",{'titulo': 'Bienvenido de nuevo',
-                                                    'texto': 'Inicie sesión a continuación o cree una cuenta',
-                                                    'error': 'Usuario o contraseña incorrectos'})
+            return render(request, "login.html", {'titulo': 'Bienvenido de nuevo',
+                                                  'texto': 'Inicie sesión a continuación o cree una cuenta',
+                                                  'error': 'Usuario o contraseña incorrectos'})
         
         else:
             login(request, user)
