@@ -1,33 +1,58 @@
-{% extends "layouts/base.html" %}
-{% load static %}
-{% block title %}indexstock{% endblock %}
-
+{% extends "layouts/baseAdmin.html" %} 
+{% load static %} 
+{% block title%}indexstock{% endblock %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-    <link rel="stylesheet" href="{}">
+<!-- CSS de Bootstrap -->
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+<link rel="stylesheet" href="{% static 'css/indexstock.css' %}" />
 
-    <body>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Titulo</th>
-                    <th>Imagen</th>
-                    <th>Descripcion</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
+<body class="body">
 
-            <tbody>
-                <tr>
-                    <td></td> 
+  <div class="card margen-color" >
+    <div class="Table_Stock">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Titulo</th>
+            <th>Imagen</th>
+            <th>Descripcion</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
 
-                </tr>
-            </tbody>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Django con python</td>
+            <td>Imagen.png</td>
+            <td>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
+              eligendi odit. Ipsa, quaerat aspernatur culpa nihil beatae
+              voluptates itaque ducimus aliquam quia, illum ullam quis sed
+              molestiae quidem dolores magni!
+            </td>
+            <td> <a name="" id="" class="btn btn-info" href="{%url 'editar_libros' %}" role="">Editar</a> 
+              |
+              <a name="" id="" class="btn btn-danger" href="#" role="">Borrar</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-        </table>
-        
-    </body>
+    <div>
+        <a class="btn btn-success" href="{% url 'crear_libros' %}">Agregar Nuevo Producto</a>
+      </div>
+  </div>
+</body>
 
+<!-- JS de Bootstrap (si es necesario) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 {% endblock %}

@@ -30,3 +30,9 @@ def padmin(request):
 
 def libros(request):
     return render(request, "libros/indexstock.html" , {'titulo': 'Libros'})
+
+def crear_libro(request):
+    return render(request, "libros/createstock.html", {'titulo': 'Crear Libro'})
+
+def editar_libro(request):
+    return render(request, "libros/editstock.html", {'titulo': 'Editar Libro'}) 

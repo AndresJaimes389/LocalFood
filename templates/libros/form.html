@@ -1,6 +1,27 @@
-{% extends "layouts/base.html" %}
 {% load static %}
-{% block title %}indexstock{% endblock %}
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" href="{% static 'css/indexstock.css' %}" />
 
-{% block content %}
-{% endblock %}
+
+<form enctype="multipart/form-data" method="post">
+    <div class="input-container ml-5 mr-5">
+      <p for="" class="form-label">Nombre: </p  >
+      <input
+        type="text"
+        class="form-control"
+        name=""
+        id=""
+        aria-describedby=""
+        placeholder="Nombre"
+      />
+    </div>
+  </form>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+
+
+
