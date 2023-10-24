@@ -8,26 +8,13 @@
 
 {% block content %}
 
-<div class= "container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-    <div class= "container-text" style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin-top: 10px;">
-        <li class = "text-foro" style="font-size: 30px; margin-right: 1000px; list-style-type: disc; text-align: left;" >Foro</li>
-        <div role = "menubar" style="display: flex; flex-direction: row; margin-right: 496px;">
-            <button role="menuitem" type="button" style=" border: none; background: #186e1f13; margin-right: 10px; font-size: 18px;"><span>Editar</span></button>
-            <button role="menuitem" type="button" style=" border: none; background: #186e1f13; margin-right: 10px; font-size: 18px;"><span>Ver</span></button>
-            <button role="menuitem" type="button" style=" border: none; background: #186e1f13; margin-right: 10px; font-size: 18px;"><span>Insertar</span></button>
-            <button role="menuitem" type="button" style=" border: none; background: #186e1f13; margin-right: 10px; font-size: 18px;"><span>Herramientas</span></button>
-            <button role="menuitem" type="button" style=" border: none; background: #186e1f13; margin-right: 10px; font-size: 18px;"><span>Tabla</span></button>
-        </div>
-        <form class = "search" style="display: flex; align-items: center; justify-content: center; height: 200px; width: 800px;">
-            <textarea class = "comment" style = "display: block; height: 100%; width: 100%; box-sizing: border-box; resize: none;" id="comentario" name="comentario" rows="4" cols="50" placeholder="Escriba su opinion aquí"></textarea>
+<div class= "container">
+    <div class= "container-text" >
+        <li class = "text-foro" >Foro</li>
+        <form class = "search">
+            <textarea class = "comment" id="comentario" name="comentario" rows="4" cols="50" placeholder="Escriba su opinion aquí"></textarea>
         </form>
         <button style ="margin-left: 740px; border: none; background: #186e1f13; font-size: 18px;">Publicar</button>
-    </div>
-    <div class= "container-text" style="display: flex; align-items: center; justify-content: center; flex-direction: column; margin-top: 10px;">
-        <li class = "text-foro" style="font-size: 30px; margin-right: 1000px; list-style-type: disc; text-align: left; " >Aportes</li>
-        <form class = "search" style="display: flex; align-items: center; justify-content: center; height: 200px; width: 800px;">
-            <textarea class = "comment" style = "display: block; height: 100%; width: 100%; box-sizing: border-box; resize: none;" id="comentario" name="comentario" rows="4" cols="50" placeholder="Escriba su opinion aquí"></textarea>
-          </form>
     </div>
 </div>
 

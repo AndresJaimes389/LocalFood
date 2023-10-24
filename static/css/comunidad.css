@@ -1,27 +1,42 @@
-.container{
+.container {
     margin: 0;
     padding: 0;
     background: #C5E892;
-}
-
-p {
-    content: "\00B7"; /* Usamos el carácter del punto (·) como contenido */
-    margin-right: 5px; /* Agregamos un espacio entre el punto y el texto */
-}
-
-.container-text {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
-
-.search {
-    display: flex;
-    background-color: red;
+    justify-content: center;
+    height: 100vh;
 }
 
 .search .comment {
     display: block;
-    height: 100px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    padding: 20px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 800px;
+}
+
+.text-foro {
+    font-size: 30px;
+    margin-right: 1000px;
+    list-style-type: disc;
+    text-align: left;
+}
+
+.container-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
 }
