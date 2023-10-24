@@ -1,27 +1,50 @@
-.container{
-    margin: 0;
-    padding: 0;
-    background: #C5E892;
+* {
+    background-color: red;
 }
 
-p {
-    content: "\00B7"; /* Usamos el carácter del punto (·) como contenido */
-    margin-right: 5px; /* Agregamos un espacio entre el punto y el texto */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .container-text {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+li .text-foro {
+    font-size: 30px;
+    margin-right: 1000px;
+    list-style-type: disc;
+    text-align: left;
 }
 
 .search {
     display: flex;
-    background-color: red;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 800px;
 }
 
-.search .comment {
+.comment {
     display: block;
-    height: 100px;
-    width: 500px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
 }
+
+.bt_publish {
+    margin-left: 740px;
+    border: none;
+    background: #186e1f13;
+    font-size: 18px;
+}
+

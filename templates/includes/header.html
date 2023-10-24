@@ -12,6 +12,9 @@
                 <li class="list_li"><a href="#">Educación</a></li>
                 <li class="list_li"><a href="{% url 'comunidad' %}">Comunidad</a></li>
                 <li class="list_li"><a href="{% url 'suscripcion' %}">Suscripción</a></li>
+                {% if user.is_superuser %}
+                <li class="list_li"><a href="#">Gestión Recetas</a></li>
+                {% endif %}
             </ul>
         </diV>
 

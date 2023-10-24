@@ -19,27 +19,27 @@ def info(request):
         c_message = request.POST["message"]
         objects_contacto = Pqrs(name=c_name, email=c_email, phone=c_phone, message=c_message)
         objects_contacto.save()
-        send_email(c_name, c_email, c_phone, c_message)
+        send_email(objects_contacto)
+        respuesta(objects_contacto)
         
         print(c_name, c_email, c_phone, c_message)
         
         return render(request, "info.html",{'titulo':'PQRS'})
     
     
-def send_email(c_name, c_email, c_phone, c_message):
-    subjects = 'Gracias por contactarnos'
-    message = f"nombre: {c_name},\n email: {c_email},\n telefono: {c_phone}, mensaje: {c_message}"
+def send_email(send_email):
+    subjects = f'LocalFood responder preguntas a {send_email.name}'
+    message = f"nombre: {send_email.name},\n email: {send_email.email},\n telefono: {send_email.phone}, \n mensaje: {send_email.message}"
     email_from = settings.EMAIL_HOST_USER
     recipient_list = ["local.food.a4@gmail.com"]
     send_mail(subjects, message, email_from, recipient_list)
     return True
     
 
-
-# def email(email):
-#     subject = 'Thank you for contact me'
-#     message = ' it  means a world to us '
-#     email_from = settings.EMAIL_HOST_USER
-#     recipient_list = ['andresjl389@gmail.com',]
-#     send_mail( subject, message, email_from, recipient_list )
-#     return True
+def respuesta(respuesta):
+    subject = "Hola, gracias por contactarse con LocalFood"
+    message = f"señor@ {respuesta.name} estamos trabajando para darle respuesta a sus preguntas"
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [f"{respuesta.email}"]
+    send_mail( subject, message, email_from, recipient_list )
+    return True
