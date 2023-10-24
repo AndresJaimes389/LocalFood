@@ -1,28 +1,21 @@
-* {
-    background-color: red;
-}
-
-
 .container {
+    margin: 0;
+    padding: 0;
+    background: #C5E892;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-.container-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 10px;
-}
-
-li .text-foro {
-    font-size: 30px;
-    margin-right: 1000px;
-    list-style-type: disc;
-    text-align: left;
+.comment {
+    display: block;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    padding: 20px;
 }
 
 .search {
@@ -33,18 +26,17 @@ li .text-foro {
     width: 800px;
 }
 
-.comment {
-    display: block;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    resize: none;
+.text-foro {
+    font-size: 30px;
+    margin-right: 1000px;
+    list-style-type: disc;
+    text-align: left;
 }
 
-.bt_publish {
-    margin-left: 740px;
-    border: none;
-    background: #186e1f13;
-    font-size: 18px;
+.container-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
 }
-
