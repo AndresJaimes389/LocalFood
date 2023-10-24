@@ -13,12 +13,8 @@ def suscripcion(request):
 
 
 
-
-
 def principal(request):
     return render(request, "pages/principal.html",{})
 
 
-def comunidad(request):
-    titulo = "titulo dinámico"
-    return render(request, "pages/comunidad.html", {'titulo':'COMUNIDAD'})
+    
