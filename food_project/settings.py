@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'Aplicaciones.Conexion',
     'Aplicaciones.recetas',
     'Aplicaciones.contacto',
-    'Aplicaciones.Foro',
+    'Aplicaciones.inventario',
+    'Aplicaciones.Comunidad',
 ]
 
 MIDDLEWARE = [
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'food_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

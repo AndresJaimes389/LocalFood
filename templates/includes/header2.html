@@ -23,11 +23,24 @@
         <h2>Pestañas</h2>
         <div class="links">
             <ul>
+                {% if request.path == "/recetas/" %}
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="#">Temporada</a></li>
+                <li><a href="#">Educación</a></li>
+                <li><a href="/create_thread">Comunidad</a></li>
+                <li><a href="/suscripcion">Suscripción</a></li>
+                {% elif request.path == "/forum_home/" %}
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
                 <li><a href="/recetas">Recetas</a></li>
                 <li><a href="#">Temporada</a></li>
                 <li><a href="#">Educación</a></li>
-                <li><a href="/comunidad">Comunidad</a></li>
                 <li><a href="/suscripcion">Suscripción</a></li>
+                {% elif request.path == "/suscripcion/" %}
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="/recetas">Recetas</a></li>
+                <li><a href="#">Temporada</a></li>
+                <li><a href="#">Educación</a></li>
+                {% endif %}
             </ul>
         </div>
 
@@ -37,8 +50,6 @@
                 {% if user.is_authenticated %}
                 <li><a href="/logout">Logout</a></li>
                 {% endif %}
-                <li><a href="{% url 'inicio' %}">Inicio</a></li>
-                <li><a href="{% url 'inicio' %}">Inicio</a></li>
             </ul>
         </div>
     </div>
