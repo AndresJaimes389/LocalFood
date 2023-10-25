@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import person_collection
+from .models import CustomUser
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
@@ -80,8 +80,8 @@ def login_view(request):
         
         else:
             login(request, user)
+            print(request.POST['Username'], request.POST['Password'])
             return redirect('inicio')
         
         
-    
     

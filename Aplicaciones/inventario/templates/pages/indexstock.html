@@ -1,9 +1,9 @@
-{% extends "layouts/baseAdmin.html" %} 
+{% extends "layouts/base.html" %} 
 {% load static %} 
 {% block title%}indexstock{% endblock %}
 {% block content %}
 <!-- CSS de Bootstrap -->
-<link
+<link 
   rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 />
@@ -20,27 +20,27 @@
             <th>Id</th>
             <th>Titulo</th>
             <th>Imagen</th>
-            <th>Descripcion</th>
+            <th>Cantidad</th>
             <th>Acciones</th>
           </tr>
         </thead>
 
         <tbody>
+
+          {%for inventario in libros%}
           <tr>
-            <td>1</td>
-            <td>Django con python</td>
-            <td>Imagen.png</td>
+            <td>{{inventario.id}}</td>
+            <td>{{inventario.titulo}}</td>
             <td>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem,
-              eligendi odit. Ipsa, quaerat aspernatur culpa nihil beatae
-              voluptates itaque ducimus aliquam quia, illum ullam quis sed
-              molestiae quidem dolores magni!
+              <img src="{{inventario.imagen.url}}" height="100"/>
             </td>
-            <td> <a name="" id="" class="btn btn-info" href="{%url 'editar_libros' %}" role="">Editar</a> 
+            <td> {{inventario.descripcion}}</td>
+            <td> <a name="" id="" class="btn btn-info" href="{%url 'editar_libros' inventario.id%}" role="">Editar</a> 
               |
-              <a name="" id="" class="btn btn-danger" href="#" role="">Borrar</a>
+                <a name="" id="" class="btn btn-danger" href="{%url 'eliminar_libros' inventario.id%}" role="">Borrar</a>
             </td>
           </tr>
+          {%endfor%}
         </tbody>
       </table>
     </div>

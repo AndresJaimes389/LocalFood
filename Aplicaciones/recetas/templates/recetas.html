@@ -11,18 +11,24 @@
     <div class="container">
         <div class="container_texto">
             <p class="texto">Ingrese los ingredientes de las recetas</p>
-            <form class="search">
-                <input type="text" placeholder="Escriba aquí el ingrediente" class="input_receta">
+            <form class="search" method="POST">
+                {% csrf_token %}
+                <input type="text" placeholder="Escriba aquí el ingrediente" class="input_receta" name="receta">
                 <button type="submit" class="send"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
+
+            <h2 class="h2_busqueda">{{busqueda}}</h2>
+
         </div>
             <div class="article_container">
                 <article class="article">
+                    {% for r in r_recetas %}
                     <div class="receta_container">
-                        <div class="receta"></div>
-                        <h2>Titulo receta</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dicta natus vitae quod laborum a obcaecati odio, odit nihil perferendis quis, veniam eaque, laboriosam nobis qui! Consequuntur aperiam nihil rerum.</p>
+                        <div class="receta"><img src="{{r.imageproj.url}}"> </div>
+                        <h2>{{r.Nombre_receta}}</h2>
+                        <p>{{r.Descripcion|slice:":200"}}...</p>
                     </div>
+                    {% endfor %}
                 </article>
             </div>
     </div>

@@ -15,22 +15,37 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include   
-from .views import inicio, recetas, suscripcion, principal, info, comunidad, padmin , libros , crear_libro, editar_libro
+from django.urls import path, include
+# from .views import suscripcion, principal, comunidad, inicio
+from .views import inicio,  suscripcion, principal, comunidad
+from django.contrib.auth.decorators import login_required
 
+from django.urls import re_path
+from django.views.static import serve
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', inicio, name = 'inicio'),
-    path('recetas/', recetas, name = 'recetas'),
-    path('suscripcion/', suscripcion, name = 'suscripcion'),
+    path('inicio/', login_required(inicio, login_url = "/login/"), name = 'inicio'),
+    path('suscripcion/', login_required(suscripcion, login_url = "/login/"), name = 'suscripcion'),
     path('', principal, name = 'principal'),
-    path('info/', info, name = 'info'),
-    path('comunidad/', comunidad, name = 'comunidad'),
+    path('comunidad/', login_required(comunidad, login_url = "/login/"), name = 'comunidad'),
     path('', include('Aplicaciones.Conexion.urls')),
-    path('padmin/', padmin , name = 'perfil_administrativo'),
-    path('indexlibros/', libros, name = 'libros'),
-    path('libroscrear/', crear_libro, name = 'crear_libros'),
-    path('libroseditar/', editar_libro , name = 'editar_libros'),
-
+    path('', include('Aplicaciones.recetas.urls')),
+    path('', include('Aplicaciones.contacto.urls')),
+    path('', include('Aplicaciones.inventario.urls')),
+    re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    
 ]
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('inicio/',inicio, name = 'inicio'),
+#     path('suscripcion/',suscripcion, name = 'suscripcion'),
+#     path('', principal, name = 'principal'),
+#     path('comunidad/',comunidad, name = 'comunidad'),
+#     path('', include('Aplicaciones.Conexion.urls')),
+#     path('', include('Aplicaciones.recetas.urls')),
+#     path('', include('Aplicaciones.contacto.urls')),
+# ]
