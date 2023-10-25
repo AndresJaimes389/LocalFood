@@ -7,30 +7,6 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from django.contrib.auth import password_validation
 
-# Create your views here.
-
-# def index(request):
-#     return HttpResponse("<h1>App is running..</h1>")
-
-# def add_person(request):
-#     records = {
-#         'first_name': 'Andres',
-#         'last_name': 'Carrillo',
-#     }
-#     person_collection.insert_one(records)
-#     return HttpResponse("New person added")
-
-# def get_all_person(request):
-    
-#     consulta = {}
-#     proyeccion = {'first_name': 'Andres'}
-    
-#     person = person_collection.find(consulta, proyeccion)
-#     return HttpResponse(person)
-
-
-def Hola(request):
-    return HttpResponse("HelloWorld")
 
 def signin(request):
     titulo = "titulo dinámico"
@@ -81,13 +57,13 @@ def login_view(request):
     
     else:
         # print(request.POST)
-        username_or_email = request.POST.get('Username')  # Intentamos obtener el valor del campo 'Username'
+        username_or_email = request.POST.get('Username')  
         password = request.POST.get('Password')
-        # Intentamos autenticar al usuario con nombre de usuario o correo electrónico
+        
         user = None
-        if '@' in username_or_email:  # Si el campo 'Username' parece ser un correo electrónico
+        if '@' in username_or_email:  
             user = authenticate(request, email=username_or_email, password=password)
-        else:  # Si no es un correo electrónico, asumimos que es un nombre de usuario
+        else:  
             user = authenticate(request, username=username_or_email, password=password)
 
         if user is None:

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Aplicaciones.Conexion',
     'Aplicaciones.recetas',
     'Aplicaciones.contacto',
+    'Aplicaciones.inventario',
     'Aplicaciones.Foro',
 ]
 
