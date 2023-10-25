@@ -16,7 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import suscripcion, principal, comunidad, inicio
+# from .views import suscripcion, principal, comunidad, inicio
+from .views import inicio,  suscripcion, principal
 from django.contrib.auth.decorators import login_required
 
 from django.urls import re_path
@@ -30,11 +31,13 @@ urlpatterns = [
     path('inicio/', login_required(inicio, login_url = "/login/"), name = 'inicio'),
     path('suscripcion/', login_required(suscripcion, login_url = "/login/"), name = 'suscripcion'),
     path('', principal, name = 'principal'),
-    path('comunidad/', login_required(comunidad, login_url = "/login/"), name = 'comunidad'),
     path('', include('Aplicaciones.Conexion.urls')),
     path('', include('Aplicaciones.recetas.urls')),
     path('', include('Aplicaciones.contacto.urls')),
+    path('', include('Aplicaciones.inventario.urls')),
+    path('', include('Aplicaciones.Foro.urls')),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    
 ]
 # urlpatterns = [
 #     path('admin/', admin.site.urls),

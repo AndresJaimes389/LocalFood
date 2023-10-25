@@ -40,3 +40,8 @@
     flex-direction: column;
     margin-top: 10px;
 }
+
+.bt_publish {
+    border: none;
+    background-color: chartreuse;
+}
