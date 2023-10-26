@@ -7,30 +7,6 @@ from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from django.contrib.auth import password_validation
 
-# Create your views here.
-
-# def index(request):
-#     return HttpResponse("<h1>App is running..</h1>")
-
-# def add_person(request):
-#     records = {
-#         'first_name': 'Andres',
-#         'last_name': 'Carrillo',
-#     }
-#     person_collection.insert_one(records)
-#     return HttpResponse("New person added")
-
-# def get_all_person(request):
-    
-#     consulta = {}
-#     proyeccion = {'first_name': 'Andres'}
-    
-#     person = person_collection.find(consulta, proyeccion)
-#     return HttpResponse(person)
-
-
-def Hola(request):
-    return HttpResponse("HelloWorld")
 
 def signin(request):
     titulo = "titulo dinámico"
@@ -81,13 +57,13 @@ def login_view(request):
     
     else:
         # print(request.POST)
-        username_or_email = request.POST.get('Username')  # Intentamos obtener el valor del campo 'Username'
+        username_or_email = request.POST.get('Username')  
         password = request.POST.get('Password')
-        # Intentamos autenticar al usuario con nombre de usuario o correo electrónico
+        
         user = None
-        if '@' in username_or_email:  # Si el campo 'Username' parece ser un correo electrónico
+        if '@' in username_or_email:  
             user = authenticate(request, email=username_or_email, password=password)
-        else:  # Si no es un correo electrónico, asumimos que es un nombre de usuario
+        else:  
             user = authenticate(request, username=username_or_email, password=password)
 
         if user is None:
@@ -99,6 +75,35 @@ def login_view(request):
             login(request, user)
             print(request.POST['Username'], request.POST['Password'])
             return redirect('inicio')
+        
+
+def recuperacion(request):
+     if request.method == 'GET':
+         return render(request, "registration/recuperacion.html", {'titulo': 'Recuperacion de contraseñas'})
+     else:
+         try:
+             correo = request.POST['email']
+             email_validator = request.POST['email']
+             if not email_validator.endswith('@gmail.com') and not email_validator.endswith('@hotmail.com') and not email_validator.endswith('@outlook.com'):
+                 raise ValidationError("El correo debe ser de dominio @gmail.com, @hotmail.com o @outlok.com.")
+             return render(request, 'registration/password_reset_done.html', {'template_name':'registration/password_reset_done.html'})
+             print(correo)
+         except ValidationError as e:
+             return render(request, "registration/recuperacion.html", {'titulo': 'Recuperacion de contraseñas',
+                                                         'template_name':'recuperacion.html', 
+                                                         'email_template_name': 'password_reset_email.html',
+                                                         'error': e.message})
+
+def password_reset_done(request):
+     return render (request, "registration/password_reset_done.html", {'template_name':'registration/password_reset_done.html'})
+
+def password_reset_confirm(request):
+     return render (request, "registration/password_reset_confirm.html", {'template_name':'registration/password_reset_confirm.html'})
+
+def password_reset_complete(request):
+     return render (request, "registration/password_reset_complete.html", {'template_name':'registration/password_reset_complete.html'})
+    
+
         
         
     
