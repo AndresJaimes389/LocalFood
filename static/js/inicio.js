@@ -28,3 +28,13 @@ document.addEventListener("click", function (event) {
 
 // Agrega un evento de clic al cuerpo de la página para desactivar el menú si se hace clic en cualquier parte
 document.body.addEventListener("click", desactivarMenu);
+
+
+const menuSettings = document.getElementById("settings");
+const settingsDiv = document.querySelector(".div_settings");
+const container = document.querySelector(".container_div");
+
+menuSettings.addEventListener("click", function() {
+    settingsDiv.classList.toggle("active");
+    container.classList.toggle("active");
+});

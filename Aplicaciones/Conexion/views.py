@@ -60,12 +60,8 @@ def login_view(request):
         username_or_email = request.POST.get('Username')  
         password = request.POST.get('Password')
         
-        user = None
-        if '@' in username_or_email:  
-            user = authenticate(request, email=username_or_email, password=password)
-        else:  
-            user = authenticate(request, username=username_or_email, password=password)
-
+        user = authenticate(request, username=username_or_email, password=password)
+        
         if user is None:
             return render(request, "login.html", {'titulo': 'Bienvenido de nuevo',
                                                   'texto': 'Inicie sesión a continuación o cree una cuenta',
@@ -74,7 +70,11 @@ def login_view(request):
         else:
             login(request, user)
             print(request.POST['Username'], request.POST['Password'])
-            return redirect('inicio')
+            
+            if user.is_superuser:
+                return redirect('perfil_administrativo')
+            else:
+                return redirect('inicio')
         
         
     

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'Aplicaciones.contacto',
     'Aplicaciones.inventario',
     'Aplicaciones.Foro',
+    'Aplicaciones.Admin',
 ]
 
 MIDDLEWARE = [

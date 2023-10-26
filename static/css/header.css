@@ -31,24 +31,24 @@
 
 .option{
     display: none;
-    overflow: auto;
 }
 
 .options.active{
     display: flex;
     border-radius: 15px;
-    overflow: auto;
 }
 
 .list{
     display: none;
     position: absolute;
     z-index: 10;
-    overflow: auto;
     
 }
 
-
+.list_li_a{
+    display: block;
+    width: 100%;
+}
 .list.active{
     background: #fffdfd;
     display: flex;
@@ -62,7 +62,7 @@
     border-radius: 10px;
     position: absolute;
     z-index: 10;
-    overflow: auto;
+
 }
 
 .nav_conatiner{

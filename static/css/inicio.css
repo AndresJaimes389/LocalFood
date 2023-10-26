@@ -82,3 +82,35 @@
 .info_container{
     margin-bottom: 20px;
 }
+
+.div_settings{
+    display: none;
+}
+
+.container_div{
+    display: flex;
+    justify-content: end;
+}
+
+.div_settings.active{
+    padding: 2%;
+    display: flex;
+    background: #fff2fd;
+    align-items: center;
+    flex: 3;
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    flex-direction: column;
+}
+
+.links{
+    height: 90%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
