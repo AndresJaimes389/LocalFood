@@ -76,5 +76,34 @@ def login_view(request):
             else:
                 return redirect('inicio')
         
+
+def recuperacion(request):
+     if request.method == 'GET':
+         return render(request, "registration/recuperacion.html", {'titulo': 'Recuperacion de contraseñas'})
+     else:
+         try:
+             correo = request.POST['email']
+             email_validator = request.POST['email']
+             if not email_validator.endswith('@gmail.com') and not email_validator.endswith('@hotmail.com') and not email_validator.endswith('@outlook.com'):
+                 raise ValidationError("El correo debe ser de dominio @gmail.com, @hotmail.com o @outlok.com.")
+             return render(request, 'registration/password_reset_done.html', {'template_name':'registration/password_reset_done.html'})
+             print(correo)
+         except ValidationError as e:
+             return render(request, "registration/recuperacion.html", {'titulo': 'Recuperacion de contraseñas',
+                                                         'template_name':'recuperacion.html', 
+                                                         'email_template_name': 'password_reset_email.html',
+                                                         'error': e.message})
+
+def password_reset_done(request):
+     return render (request, "registration/password_reset_done.html", {'template_name':'registration/password_reset_done.html'})
+
+def password_reset_confirm(request):
+     return render (request, "registration/password_reset_confirm.html", {'template_name':'registration/password_reset_confirm.html'})
+
+def password_reset_complete(request):
+     return render (request, "registration/password_reset_complete.html", {'template_name':'registration/password_reset_complete.html'})
+    
+
+        
         
     
