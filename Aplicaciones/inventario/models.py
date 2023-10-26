@@ -12,7 +12,7 @@ class inventario(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        fila= "Titulo:" + self.titulo +  " - " + "Descripcion:" + self.descripcion
+        fila= "Titulo:" + self.titulo +  " - " + "Descripcion:" + str(self.descripcion)
         return fila
     
     def delete(self, using= None, keep_parents=False):

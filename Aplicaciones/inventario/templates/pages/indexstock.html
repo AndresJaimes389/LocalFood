@@ -12,43 +12,45 @@
 
 <body class="body">
 
-  <div class="card margen-color" >
-    <div class="Table_Stock">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Titulo</th>
-            <th>Imagen</th>
-            <th>Cantidad</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
+  <div class="container">
+    <div class="card margen-color mt-4 " >
+      <div class="Table_Stock">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Titulo</th>
+              <th>Imagen</th>
+              <th>Cantidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
 
-        <tbody>
+          <tbody>
 
-          {%for inventario in libros%}
-          <tr>
-            <td>{{inventario.id}}</td>
-            <td>{{inventario.titulo}}</td>
-            <td>
-              <img src="{{inventario.imagen.url}}" height="100"/>
-            </td>
-            <td> {{inventario.descripcion}}</td>
-            <td> <a name="" id="" class="btn btn-info" href="{%url 'editar_libros' inventario.id%}" role="">Editar</a> 
-              |
+            {%for inventario in libros%}
+            <tr>
+              <td>{{inventario.id}}</td>
+              <td>{{inventario.titulo}}</td>
+              <td>
+                <img src="{{inventario.imagen.url}}" height="100" class="img-fluid"/>
+              </td>
+              <td> {{inventario.descripcion}}</td>
+              <td> 
+                <a name="" id="" class="btn btn-info" href="{%url 'editar_libros' inventario.id%}" role="">Editar</a> 
+                |
                 <a name="" id="" class="btn btn-danger" href="{%url 'eliminar_libros' inventario.id%}" role="">Borrar</a>
-            </td>
-          </tr>
-          {%endfor%}
-        </tbody>
-      </table>
+              </td>
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+        <div class="text-center">
+          <a class="btn btn-success w-25 mt-3" href="{% url 'crear_libros' %}">Agregar Nuevo Producto</a>
+        </div>
     </div>
-
-    <div>
-        <a class="btn btn-success" href="{% url 'crear_libros' %}">Agregar Nuevo Producto</a>
-      </div>
-  </div>
+  </div>  
+  
 </body>
 
 <!-- JS de Bootstrap (si es necesario) -->
