@@ -7,10 +7,12 @@
         <i class="fa-solid fa-list" id="menu-icon"></i>
         <diV class="options">
             <ul class="list">
-                <li class="list_li"><a class="list_li_a" href="{% url 'recetas' %}">Recetas</a></li>
-                <li class="list_li"><a class="list_li_a" href="https://instagram.com" target="_blank">Productos de temporada</a></li>
-                <li class="list_li"><a class="list_li_a" href="#">Educación</a></li>
-                <li class="list_li"><a class="list_li_a" href="{% url 'comunidad' %}">Comunidad</a></li>
+                <li class="list_li"><a href="{% url 'recetas' %}">Recetas</a></li>
+                <li class="list_li"><a href="https://instagram.com" target="_blank">Productos de temporada</a></li>
+                <li class="list_li"><a href="#">Educación</a></li>
+                <li class="list_li"><a href="{% url 'create_thread' %}">Comunidad</a></li>
+                <li class="list_li"><a href="{% url 'suscripcion' %}">Suscripción</a></li>
+
                 {% if user.is_superuser %}
                 <li class="list_li"><a class="list_li_a" href="{% url 'libros' %}">Suscripción</a></li>
                 <li class="list_li"><a class="list_li_a" href="/adm_recetas">Gestión Recetas</a></li>

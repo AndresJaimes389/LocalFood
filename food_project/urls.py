@@ -36,7 +36,7 @@ urlpatterns = [
     path('', include('Aplicaciones.recetas.urls')),
     path('', include('Aplicaciones.contacto.urls')),
     path('', include('Aplicaciones.inventario.urls')),
-    path('', include('Aplicaciones.Foro.urls')),
+    path('', include('Aplicaciones.Comunidad.urls')),
     path('', include('Aplicaciones.Admin.urls')),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     
