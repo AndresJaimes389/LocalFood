@@ -9,7 +9,7 @@ def libros(request):
     
     if request.method == 'GET':
         b_libros = inventario.objects.all()
-        return render(request, "pages/indexstock.html" , {'busqueda_libros': b_libros})
+        return render(request, "pages/indexstock.html" , {'': b_libros})
     else:
         if request.POST['buscar'] == '':
             b_libros = inventario.objects.all()
