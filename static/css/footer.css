@@ -6,9 +6,10 @@
     padding: 10px;
     background: #b9eb74;
     height: 25vh;
+    
 }
 
-.footer_names{
+.footer_names {
     display: flex;
     flex: 1;
     width: 100%;
@@ -16,7 +17,7 @@
     flex-wrap: wrap;
     max-width: 700px;
     align-items: center;
-    
+    height: 100%; /* Asegura que .footer_names ocupe el 100% de la altura disponible */
 }
 
 .names_li{

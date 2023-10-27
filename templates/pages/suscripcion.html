@@ -3,7 +3,8 @@
 {% block title %}Suscripcion{% endblock %}
 
 {% block content %}
-    <article class="article">
+<link rel="stylesheet" href="{% static 'css/suscripcion.css' %}">
+<article class="article">
         <div class="article_container">
             <div class="subtitulo_container">
                 <h2 class="subtitulo">Detalle suscripción</h2>
@@ -30,9 +31,4 @@
         </div>
     </article>
 
-{% endblock %}
-
-
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/suscripcion.css' %}">
 {% endblock %}
