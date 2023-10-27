@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'Aplicaciones.recetas',
     'Aplicaciones.contacto',
     'Aplicaciones.inventario',
-    'Aplicaciones.Foro',
+    'Aplicaciones.Comunidad',
 ]
 
 MIDDLEWARE = [
