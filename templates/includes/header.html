@@ -11,7 +11,6 @@
                 <li class="list_li"><a href="https://instagram.com" target="_blank">Productos de temporada</a></li>
                 <li class="list_li"><a href="#">Educación</a></li>
                 <li class="list_li"><a href="{% url 'create_thread' %}">Comunidad</a></li>
-                <li class="list_li"><a href="{% url 'suscripcion' %}">Suscripción</a></li>
 
                 {% if user.is_superuser %}
                 <li class="list_li"><a class="list_li_a" href="{% url 'libros' %}">Suscripción</a></li>
