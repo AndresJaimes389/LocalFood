@@ -17,3 +17,5 @@ def principal(request):
 
 
     
+def padmin(request):
+    return render(request, "pages/p_administrativo.html", {'titulo': 'Perfil Administrativo'})

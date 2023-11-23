@@ -10,10 +10,15 @@
                 <li class="list_li"><a href="{% url 'recetas' %}">Recetas</a></li>
                 <li class="list_li"><a href="https://instagram.com" target="_blank">Productos de temporada</a></li>
                 <li class="list_li"><a href="#">Educación</a></li>
-                <li class="list_li"><a href="{% url 'comunidad' %}">Comunidad</a></li>
+                <li class="list_li"><a href="{% url 'create_thread' %}">Comunidad</a></li>
                 <li class="list_li"><a href="{% url 'suscripcion' %}">Suscripción</a></li>
+
                 {% if user.is_superuser %}
-                <li class="list_li"><a href="#">Gestión Recetas</a></li>
+                <li class="list_li"><a class="list_li_a" href="{% url 'libros' %}">Suscripción</a></li>
+                <li class="list_li"><a class="list_li_a" href="/adm_recetas">Gestión Recetas</a></li>
+
+                {% else %}
+                <li class="list_li"><a class="list_li_a" href="{% url 'suscripcion' %}">Suscripción</a></li>
                 {% endif %}
             </ul>
         </diV>
@@ -25,14 +30,16 @@
             <a href="{% url 'inicio' %}" class=""><img src="{% static 'img/logolocalfood.png' %}"></a>
         </button>
     </div>
+    <form method="POST">
+        {% csrf_token %}
     <div class="nav_conatiner">
         <nav class="nav_bar">
-            <input type="text" class="input_nav_bar" placeholder="Buscar">
-            <button class="btn_search"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </nav>
-    </div>
+                <input type="text" class="input_nav_bar" placeholder="Buscar" name="buscar">
+                <button class="btn_search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </nav>
+        </div>
+    </form>
     <div class="container_space"></div>
-
     
 </header>
-<script src="{% static 'js/settings.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/inicio.js' %}" type="text/javascript"></script>

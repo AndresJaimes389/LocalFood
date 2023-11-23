@@ -1,4 +1,4 @@
-{% extends "layouts/baseAdmin.html" %}
+{% extends "layouts/base2.html" %}
 
 {% load static %}
 
@@ -6,29 +6,28 @@
 {% block title %}LocalFood{% endblock %}
 
 {% block content %}
-<article class="article">
-
-    <div class="options_container">
-        
-
-    </div>
-        <div class="pensar que poner">
-           
+<body>
+<link type="text/css" href="{% static 'css/padministrativo.css' %}" rel="stylesheet">
+<div class="all">
+    <a href="{% url 'adm_recetas' %}" class="a_cards">
+        <div class="div_cards" >
+            <h2>RECETAS</h2>
+            <i class="fa-solid fa-utensils"></i>
         </div>
-    <div class="user">
-        <div class="container_img_container">
-            <div class="img_container"><i class="fa-solid fa-user"></i></div>
+    </a>
+    <a href="#" class="a_cards">
+        <div class="div_cards" >
+            <h2>PQRS</h2>
+            <i class="fa-regular fa-comment"></i>
         </div>
-        <div class="user_info">
-            <p>user name</p>
-            <p>Information type of suscription</p>
+    </a>
+    <a href="#" class="a_cards">
+        <div class="div_cards" >
+            <h2>PQRS</h2>
+            <i class="fa-regular fa-comment"></i>
         </div>
-        <i class="fa-solid fa-gear"></i>
-    </div>
-</article>
+    </a>
+</div>
+</body>
 <script type = "text/javascript" src="{% static 'js/inicio.js' %}"></script>
-{% endblock %}
-
-{% block style %} 
-    <link type="text/css" href="{% static 'css/padministrativo.css' %}" rel="stylesheet">
 {% endblock %}

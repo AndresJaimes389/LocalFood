@@ -3,6 +3,6 @@ from . import views
 
 
 urlpatterns = [
-    path('comunidad/', views.comunidad, name = 'comunidad'),
+    path('comunidad/', views.create_thread, name = 'create_thread'),
 
 ]
