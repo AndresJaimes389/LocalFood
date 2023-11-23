@@ -5,7 +5,11 @@
 <header class="header">
     <div class="button_home_container">
         <button type="button" class="home_button">
-            <a href="{% url 'inicio' %}" class="a_img"><img src="{% static 'img/logolocalfood.png' %}"></a>
+            {% if user.is_superuser %}
+                <a href="{% url 'perfil_administrativo' %}" class=""><img src="{% static 'img/logolocalfood.png' %}"></a>
+            {% else %}
+                <a href="{% url 'inicio' %}" class=""><img src="{% static 'img/logolocalfood.png' %}"></a>
+            {% endif %} 
         </button>
     </div>
 

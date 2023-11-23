@@ -25,7 +25,7 @@
                 <article class="article">
                     {% for r in r_recetas %}
                     <div class="receta_container">
-                        <div class="receta"><img src="{{r.imageproj.url}}"> </div>
+                        <a href="{% url 'Rece_Info' r.Nombre_receta %}"><div class="receta" id="ir_receta"><img src="{{r.imageproj.url}}" class="Rec_img"> </div></a>
                         <h2>{{r.Nombre_receta}}</h2>
                         <p>{{r.Descripcion|slice:":200"}}...</p>
                     </div>
@@ -33,6 +33,8 @@
                 </article>
             </div>
     </div>
+
+
 {% endblock %}
 
 {% block styles %}

@@ -49,6 +49,12 @@
     display: block;
     width: 100%;
 }
+
+
+.list_li{
+    width: 100%;
+}
+
 .list.active{
     background: #fffdfd;
     display: flex;
@@ -62,8 +68,30 @@
     border-radius: 10px;
     position: absolute;
     z-index: 10;
+    overflow-y: auto;
+}
+
+.list_li a:link, .list_li:visited,.list_li a{
+    color: #1c0083;
+    text-decoration: none;
+    width: 100%;
+}
+.list_li a:hover{
+    color: #8d0b0b;
+    animation: animate1 1s linear infinite;
+    transition: 1s;
+}
+
+.list_li:hover{
+    scale: 1;
+    transition: scale 0.5s, border 0.5s;
+    border: 2px solid #414141;
+    width: 100%;
 
 }
+
+
+
 
 .nav_conatiner{
     display: flex;

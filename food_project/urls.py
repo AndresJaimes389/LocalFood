@@ -41,13 +41,3 @@ urlpatterns = [
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     
 ]
-# urlpatterns = [
-#     path('admin/', admin.site.urls),
-#     path('inicio/',inicio, name = 'inicio'),
-#     path('suscripcion/',suscripcion, name = 'suscripcion'),
-#     path('', principal, name = 'principal'),
-#     path('comunidad/',comunidad, name = 'comunidad'),
-#     path('', include('Aplicaciones.Conexion.urls')),
-#     path('', include('Aplicaciones.recetas.urls')),
-#     path('', include('Aplicaciones.contacto.urls')),
-# ]

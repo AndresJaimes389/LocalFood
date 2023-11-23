@@ -17,7 +17,7 @@ def libros(request):
         
         else:
             titulo = request.POST['buscar']
-            b_libros = inventario.objects.filter(titulo__iexact = titulo)
+            b_libros = inventario.objects.filter(titulo__icontains = titulo)
             return render(request, "pages/indexstock.html" , {'busqueda_libros': b_libros,
                                                               'busqueda': 'elementos encontrados'})
 

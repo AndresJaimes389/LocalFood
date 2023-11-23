@@ -5,9 +5,16 @@ from .forms import AdminForm
 # Create your views here.
 
 def vista_recetas(request):
-    lista = Receta.objects.all()
-    
-    return render(request, 'adm_recetas.html',{'recetas':lista})
+    if request.method == 'GET':
+        lista = Receta.objects.all()
+        return render(request, 'adm_recetas.html',{'recetas':lista})
+    else:
+        if request.POST['buscar'] == '':
+            lista = Receta.objects.all()
+            return render(request, 'adm_recetas.html',{'recetas':lista})
+        else:
+            lista = Receta.objects.filter(Ingrediente_principal__icontains=request.POST['buscar'])
+            return render(request, 'adm_recetas.html',{'recetas':lista})
 
 
 

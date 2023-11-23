@@ -11,7 +11,7 @@ def info(request):
     titulo = "titulo dinámico"
     
     if request.method == "GET":
-        return render(request, "info.html",{'titulo':'PQRS'})
+        return render(request, "infop.html",{'titulo':'PQRS'})
     else:
         c_name = request.POST["name"]
         c_email = request.POST["email"]
@@ -24,7 +24,7 @@ def info(request):
         
         print(c_name, c_email, c_phone, c_message)
         
-        return render(request, "info.html",{'titulo':'PQRS'})
+        return render(request, "infop.html",{'titulo':'PQRS'})
     
     
 def send_email(send_email):
@@ -43,3 +43,18 @@ def respuesta(respuesta):
     recipient_list = [f"{respuesta.email}"]
     send_mail( subject, message, email_from, recipient_list )
     return True
+
+
+def PQRS(request):
+    
+    if request.method == "GET":
+        obj_quejas = Pqrs.objects.all()
+        return render(request, 'PQRS.html',{'q':obj_quejas})
+    else:
+        if request.POST['buscar'] == "":
+            obj_quejas = Pqrs.objects.all()
+            return render(request, 'PQRS.html',{'q':obj_quejas})
+        else:
+            nombre = request.POST['buscar']
+            obj_quejas = Pqrs.objects.filter(name__icontains = nombre)
+            return render(request, 'PQRS.html', {'q':obj_quejas, 'encontrados':'Elementos encontrados'})
