@@ -1,0 +1,21 @@
+{% extends "layouts/base2.html" %}
+
+{% load static %}
+
+{% block title %}Recetas{% endblock %}
+
+{% block content %}
+    
+<h1>Productos de Temporada</h1>
+
+        {% for mes in meses %}
+        <a href="{% url 'meses' mes %}">{{ mes }}</a>
+         {% endfor %}
+    
+    
+         
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/receta.css' %}">
+{% endblock %}

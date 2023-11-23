@@ -14,4 +14,6 @@ def principal(request):
     return render(request, "pages/principal.html",{})
 
 
+
+
     
