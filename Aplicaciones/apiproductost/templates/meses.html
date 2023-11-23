@@ -1,0 +1,17 @@
+{% extends "layouts/base2.html" %}
+
+{% load static %}
+
+{% block title %}Recetas{% endblock %}
+
+{% block content %}
+
+{% for m in pro %}
+
+<div>{{m.nombreproducto}}</div>
+<div><img src="{{m.imageproducto.url}}"></div>
+
+
+
+{% endfor %}
+{% endblock %}
