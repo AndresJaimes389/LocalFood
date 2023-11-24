@@ -2,20 +2,29 @@
 
 {% load static %}
 
-{% block title %}Recetas{% endblock %}
+{% block title %}Productos de temporada{% endblock %}
 
 {% block content %}
-    
-<h1>Productos de Temporada</h1>
 
+<link rel="stylesheet" href="{% static 'css/temporada.css' %}">
+
+   <body>
+
+      <div class="buttons_conatiner">
         {% for mes in meses %}
-        <a href="{% url 'meses' mes %}">{{ mes }}</a>
+        <a href="{% url 'meses' mes %}" ><button class="botones">{{ mes }}</button></a>
          {% endfor %}
-    
-    
-         
+      </div>
+
+      <div class="pro_container">
+         {% for p in obj %}
+            <div class="info_conatiner">
+               <img src="{{p.imageproducto.url}}" alt="">
+               <p>{{p.nombreproducto}}</p>
+               <p >{{p.Descripcion}}</p>
+            </div>
+         {% endfor %}
+      </div>
+   </body>
 {% endblock %}
 
-{% block styles %}
-    <link rel="stylesheet" href="{% static 'css/receta.css' %}">
-{% endblock %}

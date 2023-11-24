@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'Aplicaciones.recetas',
     'Aplicaciones.contacto',
     'Aplicaciones.inventario',
-    'Aplicaciones.Foro',
     'Aplicaciones.apiproductost',    
     'Aplicaciones.Comunidad',
     'Aplicaciones.Admin',

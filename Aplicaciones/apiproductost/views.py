@@ -5,10 +5,11 @@ import calendar
 def productos(request):
     titulo = "titulo dinámico"
     meses = list(calendar.month_name)[1:]  # Obtener los nombres de los meses de enero a diciembre
-    return render(request, "productos.html", {'titulo': 'Productos Temporada', 'meses': meses})
+    obje = Temporada.objects.all()
+    return render(request, "productos.html", {'titulo': 'Productos Temporada', 'meses': meses,'obj':obje})
 
 
 def meses(request,x):
     pro_mes= Temporada.objects.filter(mes=x)
-
-    return render(request, "meses.html", {'titulo':'Meses','pro':pro_mes})
+    meses = list(calendar.month_name)[1:]
+    return render(request, "meses.html", {'titulo':x,'pro':pro_mes, 'meses':meses})

@@ -8,9 +8,9 @@
         <diV class="options">
             <ul class="list">
                 <li class="list_li"><a class="a_header" href="{% url 'recetas' %}">Recetas</a></li>
-                <li class="list_li"><a class="a_header" href="https://instagram.com" target="_blank">Productos de temporada</a></li>
+                <li class="list_li"><a class="a_header" href="{% url 'productos' %}" >Productos de temporada</a></li>
                 <li class="list_li"><a class="a_header" href="#">Educación</a></li>
-                <li class="list_li"><a class="a_header" href="{% url 'create_thread' %}">Comunidad</a></li>
+                <li class="list_li"><a class="a_header" href="{% url 'comenComunidad' %}">Comunidad</a></li>
 
                 {% if user.is_superuser %}
                 <li class="list_li"><a class="a_header" href="{% url 'libros' %}">Suscripción</a></li>

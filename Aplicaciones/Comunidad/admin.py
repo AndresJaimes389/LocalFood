@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Thread
+from .models import Comentarios,Respuesta
 
 # Register your models here.
-admin.site.register(Thread)
+admin.site.register(Comentarios)
+admin.site.register(Respuesta)
+

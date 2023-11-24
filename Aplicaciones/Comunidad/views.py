@@ -1,17 +1,35 @@
 from django.shortcuts import render, redirect
-from .forms import ThreadForm
-from django.contrib.auth.decorators import login_required
+from .models import Comentarios,Respuesta
 
-@login_required
-def create_thread(request):
+
+
+def comentar(request):
+    
     if request.method == 'POST':
-        form = ThreadForm(request.POST)
-        if form.is_valid():
-            thread = form.save(commit=False)
-            thread.user = request.user
-            thread.save()
-            return redirect('create_thread')  # Redirige a la página principal del foro
+        
+        print(request.POST['comentario'])
+        comentario = request.POST['comentario']
+        obj_comment = Comentarios(text=comentario)
+        obj_comment.save()
+        
+        return redirect('comenComunidad')
+    
     else:
-        form = ThreadForm()
-    return render(request, 'create_thread.html', {'form': form})
+        mis_comentarios = Comentarios.objects.all()
+        return render(request, 'create_thread.html',{'c':mis_comentarios})
 
+def rta(request):
+    if request.method == 'POST':
+        print(request.POST['custID'])
+        print(request.POST['Resp'])
+        
+        textRespuesta = request.POST['Resp']
+        custid = request.POST['custID']
+        obj_res = Respuesta(textRes=textRespuesta, commentID=custid)
+        obj_res.save()
+        
+        return redirect('comenComunidad')    
+        
+    else:
+        mis_resp = Respuesta.objects.all()
+        return render(request, 'create_thread.html',{'r':mis_resp})

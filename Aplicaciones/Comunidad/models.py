@@ -1,14 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Thread(models.Model):
-    title = models.CharField(max_length=200)
-    body = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
+class Comentarios(models.Model):
+    id = models.AutoField(primary_key=True)
+    text = models.TextField(max_length=2000)
 
     class Meta:
-        db_table = 'Foro_thread'
+        db_table = 'Comentarios'
 
-    def __str__(self):
-        return self.title
+class Respuesta(models.Model):
+    id = models.AutoField(primary_key=True)
+    textRes = models.CharField(max_length=2000)
+    commentID = models.IntegerField()
+    
+    class Meta:
+        db_table = 'Respuesta'
+    
+

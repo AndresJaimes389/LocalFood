@@ -45,3 +45,49 @@
     border: none;
     background-color: chartreuse;
 }
+
+.container{
+    background: #C5E892;
+}
+
+
+
+.forum{
+    height: 40vh;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 1%;
+  }
+  
+  
+  .forum:focus{
+    border-bottom: 4px solid #95cf4c;
+    
+  }
+  
+  .forum_res{
+    height: 40vh;
+    resize: none;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    padding: 1%;
+  }
+  
+  .forum_res:focus{
+    border-bottom: 4px solid #ee4bbd;
+  }
+  
+  .conatiner_res{
+    border-bottom: 4px solid #95cf4c;
+  }
+  
+  .form_respuesta{
+    display: none;
+  }
+  
+  .boton{
+    margin-bottom: 35vh;
+  }

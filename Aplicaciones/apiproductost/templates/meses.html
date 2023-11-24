@@ -5,13 +5,27 @@
 {% block title %}Recetas{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'css/temporada.css' %}">
 
-{% for m in pro %}
+<body>
+    <div class="buttons_conatiner">
+        {% for mes in meses %}
+        <a href="{% url 'meses' mes %}" ><button class="botones">{{ mes }}</button></a>
+        {% endfor %}
+        <a href="{% url 'productos' %}" ><button class="botones">Year</button></a>
+    </div>
 
-<div>{{m.nombreproducto}}</div>
-<div><img src="{{m.imageproducto.url}}"></div>
+    <div class="pro_container">
+        {% for m in pro %}
+            <div class="info_conatiner">
+                <img src="{{m.imageproducto.url}}" alt="">
+                <p>{{m.nombreproducto}}</p>
+                <p >{{m.Descripcion}}</p>
+            </div>
+        {% endfor %}
+    </div>
 
 
 
-{% endfor %}
+</body>
 {% endblock %}
